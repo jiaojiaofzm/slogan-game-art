@@ -72,3 +72,13 @@
     });
   });
 })();
+
+
+// Reference-inspired quiz micro-interaction
+document.querySelectorAll('.quiz-options button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.quiz-options button').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+    btn.textContent = btn.textContent.replace(' ✓','') + ' ✓';
+  });
+});
